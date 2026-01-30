@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Delivery Information</title>
+  <link rel="stylesheet" href="/static/style.css">
+</head>
+<body>
+  <div class="container">
+    <div class="delivery-box">
+      <h1>🚗 Delivery Information</h1>
+      
+      <div class="order-info">
+        <p><strong>Order ID:</strong> {{ order_id }}</p>
+        <p><strong>Customer:</strong> {{ order.name }}</p>
+      </div>
+
+      <div class="delivery-section">
+        <h3>📍 Delivery Address:</h3>
+        <input type="text" placeholder="Enter your street address" class="input-field">
+        <input type="text" placeholder="City, State, ZIP" class="input-field">
+        <input type="text" placeholder="Apartment/Suite (optional)" class="input-field">
+      </div>
+
+      <div class="delivery-section">
+        <h3>📱 Contact Information:</h3>
+        <input type="tel" placeholder="Phone number" class="input-field">
+        <input type="email" placeholder="Email (optional)" class="input-field">
+      </div>
+
+      <div class="delivery-options">
+        <h3>Delivery Options:</h3>
+        
+        <div class="option-card">
+          <input type="radio" id="standard" name="delivery" value="standard" checked>
+          <label for="standard">
+            <strong>🏠 Standard Delivery</strong>
+            <p>30-45 minutes | Free</p>
+          </label>
+        </div>
+        
+        <div class="option-card">
+          <input type="radio" id="express" name="delivery" value="express">
+          <label for="express">
+            <strong>⚡ Express Delivery</strong>
+            <p>15-20 minutes | +$5.00</p>
+          </label>
+        </div>
+        
+        <div class="option-card">
+          <input type="radio" id="pickup" name="delivery" value="pickup">
+          <label for="pickup">
+            <strong>🏪 Pickup</strong>
+            <p>Ready in 30 minutes | Free</p>
+          </label>
+        </div>
+      </div>
+
+      <div class="special-instructions">
+        <h3>Special Instructions:</h3>
+        <textarea placeholder="Any special requests or gate codes?" rows="4"></textarea>
+      </div>
+
+      <div class="estimated-info">
+        <div class="info-box">
+          <p><strong>Estimated Delivery:</strong> Today, 6:45 PM</p>
+          <p><strong>Delivery Driver:</strong> Will be assigned after payment</p>
+          <p><strong>Track in Real-time:</strong> Yes ✅</p>
+        </div>
+      </div>
+
+      <div class="button-group">
+        <button class="btn btn-success" onclick="confirmDelivery()">✅ Confirm Delivery Details</button>
+        <a href="/payment/{{ order_id }}" class="btn btn-secondary">← Back to Payment</a>
+      </div>
+    </div>
+  </div>
+  <script src="/static/script.js"></script>
+  <script>
+    function confirmDelivery() {
+      const delivery = document.querySelector('input[name="delivery"]:checked').value;
+      alert(`Delivery method: ${delivery.toUpperCase()}\nConfirmed! Your order will be ${delivery === 'pickup' ? 'ready for pickup' : 'delivered'} soon! 🍕`);
+    }
+  </script>
+</body>
+</html>

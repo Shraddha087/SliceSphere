@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Order Tracking</title>
+  <link rel="stylesheet" href="/static/style.css">
+</head>
+<body>
+  <div class="container">
+    <div class="tracking-box">
+      <h1>📍 Order Tracking</h1>
+      
+      <div class="order-info">
+        <p><strong>Order ID:</strong> {{ order_id }}</p>
+        <p><strong>Customer:</strong> {{ order.name }}</p>
+      </div>
+
+      <div class="progress-tracker">
+        <div class="progress-step completed">
+          <div class="step-number">1</div>
+          <div class="step-title">Order Received</div>
+          <div class="step-time">Just now</div>
+        </div>
+        
+        <div class="progress-step active">
+          <div class="step-number">2</div>
+          <div class="step-title">Preparing Pizza</div>
+          <div class="step-time">In progress...</div>
+        </div>
+        
+        <div class="progress-step">
+          <div class="step-number">3</div>
+          <div class="step-title">Baking</div>
+          <div class="step-time">~15 min</div>
+        </div>
+        
+        <div class="progress-step">
+          <div class="step-number">4</div>
+          <div class="step-title">Quality Check</div>
+          <div class="step-time">~5 min</div>
+        </div>
+        
+        <div class="progress-step">
+          <div class="step-number">5</div>
+          <div class="step-title">Ready for Pickup</div>
+          <div class="step-time">~30 min</div>
+        </div>
+      </div>
+
+      <div class="tracking-details">
+        <h3>Order Details:</h3>
+        <p>{{ order.quantity }}x {{ order.size }} {{ order.pizza }}</p>
+        <p><strong>Status:</strong> {{ order.status }}</p>
+        <p><strong>Ordered at:</strong> {{ order.timestamp }}</p>
+      </div>
+
+      <div class="button-group">
+        <a href="/payment/{{ order_id }}" class="btn btn-info">💳 View Payment</a>
+        <a href="/delivery/{{ order_id }}" class="btn btn-success">🚗 Delivery Details</a>
+        <a href="/" class="btn btn-secondary">← Back to Menu</a>
+      </div>
+    </div>
+  </div>
+  <script src="/static/script.js"></script>
+</body>
+</html>

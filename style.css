@@ -1,0 +1,407 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Poppins', sans-serif;
+  background: linear-gradient(135deg, #ffecd2, #fcb69f);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  padding: 20px;
+}
+
+.container {
+  background: white;
+  padding: 40px;
+  border-radius: 15px;
+  box-shadow: 0px 8px 20px rgba(0,0,0,0.2);
+  text-align: center;
+  max-width: 600px;
+  width: 100%;
+}
+
+h1 {
+  color: #e63946;
+  margin-bottom: 25px;
+  font-size: 2em;
+}
+
+h3 {
+  color: #333;
+  margin-top: 20px;
+  margin-bottom: 15px;
+  text-align: left;
+}
+
+input, select, textarea {
+  width: 100%;
+  padding: 12px;
+  margin: 10px 0;
+  border-radius: 8px;
+  border: 1px solid #ddd;
+  font-family: 'Poppins', sans-serif;
+  font-size: 14px;
+}
+
+textarea {
+  resize: vertical;
+}
+
+input:focus, select:focus, textarea:focus {
+  outline: none;
+  border-color: #e63946;
+  box-shadow: 0 0 5px rgba(230, 57, 70, 0.3);
+}
+
+button, .btn {
+  padding: 12px 20px;
+  margin: 10px 5px;
+  border-radius: 8px;
+  border: none;
+  font-weight: bold;
+  cursor: pointer;
+  transition: all 0.3s;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 14px;
+}
+
+.btn-primary {
+  background: #e63946;
+  color: white;
+}
+
+.btn-primary:hover {
+  background: #ff6f61;
+  transform: scale(1.05);
+}
+
+.btn-info {
+  background: #457b9d;
+  color: white;
+}
+
+.btn-info:hover {
+  background: #5a8fc4;
+  transform: scale(1.05);
+}
+
+.btn-success {
+  background: #2a9d8f;
+  color: white;
+}
+
+.btn-success:hover {
+  background: #34c9aa;
+  transform: scale(1.05);
+}
+
+.btn-secondary {
+  background: #95a5a6;
+  color: white;
+}
+
+.btn-secondary:hover {
+  background: #7f8c8d;
+}
+
+/* Button Groups */
+.button-group {
+  margin-top: 30px;
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 10px;
+}
+
+/* Order Confirmation */
+.confirmation-box {
+  animation: slideIn 0.5s ease-in-out;
+}
+
+.order-summary {
+  background: #f8f9fa;
+  padding: 20px;
+  border-radius: 10px;
+  margin: 20px 0;
+  text-align: left;
+  border-left: 4px solid #e63946;
+}
+
+.order-summary p {
+  margin: 10px 0;
+  font-size: 15px;
+}
+
+.order-id {
+  font-weight: bold;
+  color: #e63946;
+  font-size: 16px;
+}
+
+.status-badge {
+  background: #2a9d8f;
+  color: white;
+  padding: 4px 12px;
+  border-radius: 20px;
+  font-size: 13px;
+  font-weight: bold;
+}
+
+/* Tracking */
+.tracking-box {
+  animation: slideIn 0.5s ease-in-out;
+}
+
+.progress-tracker {
+  margin: 30px 0;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 10px;
+}
+
+.progress-step {
+  flex: 1;
+  text-align: center;
+  padding: 15px;
+  border-radius: 10px;
+  background: #f0f0f0;
+  transition: all 0.3s;
+}
+
+.progress-step.completed {
+  background: #d4edda;
+  color: #155724;
+}
+
+.progress-step.active {
+  background: #fff3cd;
+  color: #856404;
+  transform: scale(1.05);
+  box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+}
+
+.step-number {
+  font-size: 24px;
+  font-weight: bold;
+  margin-bottom: 5px;
+}
+
+.step-title {
+  font-weight: bold;
+  margin: 8px 0;
+}
+
+.step-time {
+  font-size: 12px;
+  color: #666;
+}
+
+.tracking-details {
+  background: #e8f4f8;
+  padding: 15px;
+  border-radius: 10px;
+  margin: 20px 0;
+  text-align: left;
+}
+
+.tracking-details p {
+  margin: 8px 0;
+}
+
+/* Payment */
+.payment-box {
+  animation: slideIn 0.5s ease-in-out;
+}
+
+.price-summary {
+  background: #fff9e6;
+  padding: 20px;
+  border-radius: 10px;
+  margin: 20px 0;
+  text-align: left;
+}
+
+.price-line {
+  display: flex;
+  justify-content: space-between;
+  margin: 10px 0;
+  font-size: 15px;
+}
+
+.price-line.total {
+  border-top: 2px solid #ddd;
+  padding-top: 10px;
+  margin-top: 15px;
+  font-weight: bold;
+  font-size: 18px;
+  color: #e63946;
+}
+
+.payment-methods {
+  margin: 20px 0;
+}
+
+.payment-option {
+  margin: 15px 0;
+  position: relative;
+}
+
+.payment-option input[type="radio"] {
+  display: none;
+}
+
+.payment-label {
+  display: flex;
+  align-items: center;
+  padding: 15px;
+  border: 2px solid #ddd;
+  border-radius: 10px;
+  cursor: pointer;
+  transition: all 0.3s;
+}
+
+.payment-option input[type="radio"]:checked + .payment-label {
+  border-color: #e63946;
+  background: #ffe8eb;
+}
+
+.payment-icon {
+  font-size: 24px;
+  margin-right: 15px;
+}
+
+.payment-text {
+  flex: 1;
+  text-align: left;
+}
+
+/* Delivery */
+.delivery-box {
+  animation: slideIn 0.5s ease-in-out;
+}
+
+.delivery-section {
+  background: #f8f9fa;
+  padding: 15px;
+  border-radius: 10px;
+  margin: 15px 0;
+  text-align: left;
+}
+
+.input-field {
+  width: 100%;
+}
+
+.delivery-options {
+  margin: 20px 0;
+}
+
+.option-card {
+  margin: 12px 0;
+  position: relative;
+}
+
+.option-card input[type="radio"] {
+  display: none;
+}
+
+.option-card label {
+  display: block;
+  padding: 15px;
+  border: 2px solid #ddd;
+  border-radius: 10px;
+  cursor: pointer;
+  transition: all 0.3s;
+  text-align: left;
+}
+
+.option-card input[type="radio"]:checked + label {
+  border-color: #2a9d8f;
+  background: #d4edda;
+}
+
+.option-card label strong {
+  display: block;
+  margin-bottom: 5px;
+}
+
+.option-card label p {
+  margin: 0;
+  font-size: 13px;
+  color: #666;
+}
+
+.special-instructions {
+  text-align: left;
+  margin: 20px 0;
+}
+
+.estimated-info {
+  margin: 20px 0;
+}
+
+.info-box {
+  background: #e8f4f8;
+  padding: 15px;
+  border-radius: 10px;
+  text-align: left;
+}
+
+.info-box p {
+  margin: 8px 0;
+  font-size: 14px;
+}
+
+.order-info {
+  background: #f0f0f0;
+  padding: 15px;
+  border-radius: 10px;
+  margin: 15px 0;
+  text-align: left;
+}
+
+.order-info p {
+  margin: 8px 0;
+  font-size: 14px;
+}
+
+/* Animations */
+@keyframes slideIn {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Responsive Design */
+@media (max-width: 600px) {
+  .container {
+    padding: 20px;
+  }
+
+  h1 {
+    font-size: 1.5em;
+  }
+
+  .progress-tracker {
+    flex-direction: column;
+  }
+
+  .button-group {
+    flex-direction: column;
+  }
+
+  .btn {
+    width: 100%;
+  }
+}

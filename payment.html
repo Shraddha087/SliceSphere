@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Payment Options</title>
+  <link rel="stylesheet" href="/static/style.css">
+</head>
+<body>
+  <div class="container">
+    <div class="payment-box">
+      <h1>💳 Payment Options</h1>
+      
+      <div class="order-info">
+        <p><strong>Order ID:</strong> {{ order_id }}</p>
+        <p><strong>Customer:</strong> {{ order.name }}</p>
+      </div>
+
+      <div class="price-summary">
+        <h3>Order Summary:</h3>
+        <div class="price-line">
+          <span>{{ order.quantity }}x {{ order.size }} {{ order.pizza }}</span>
+          <span id="price"></span>
+        </div>
+        <div class="price-line">
+          <span>Delivery Fee</span>
+          <span>$2.00</span>
+        </div>
+        <div class="price-line total">
+          <span>Total Amount:</span>
+          <span>${{ total + 2.0 }}</span>
+        </div>
+      </div>
+
+      <div class="payment-methods">
+        <h3>Choose Payment Method:</h3>
+        
+        <div class="payment-option">
+          <input type="radio" id="card" name="payment" value="card" checked>
+          <label for="card" class="payment-label">
+            <span class="payment-icon">💳</span>
+            <span class="payment-text">Credit/Debit Card</span>
+          </label>
+        </div>
+        
+        <div class="payment-option">
+          <input type="radio" id="paypal" name="payment" value="paypal">
+          <label for="paypal" class="payment-label">
+            <span class="payment-icon">🅿️</span>
+            <span class="payment-text">PayPal</span>
+          </label>
+        </div>
+        
+        <div class="payment-option">
+          <input type="radio" id="apple" name="payment" value="apple">
+          <label for="apple" class="payment-label">
+            <span class="payment-icon">🍎</span>
+            <span class="payment-text">Apple Pay</span>
+          </label>
+        </div>
+        
+        <div class="payment-option">
+          <input type="radio" id="cash" name="payment" value="cash">
+          <label for="cash" class="payment-label">
+            <span class="payment-icon">💵</span>
+            <span class="payment-text">Cash on Delivery</span>
+          </label>
+        </div>
+      </div>
+
+      <div class="button-group">
+        <button class="btn btn-success" onclick="processPayment()">✅ Proceed to Payment</button>
+        <a href="/tracking/{{ order_id }}" class="btn btn-secondary">← Back to Tracking</a>
+      </div>
+    </div>
+  </div>
+  <script src="/static/script.js"></script>
+  <script>
+    function processPayment() {
+      const method = document.querySelector('input[name="payment"]:checked').value;
+      alert(`Processing payment via ${method.toUpperCase()}...\nPayment Successful! ✅`);
+    }
+  </script>
+</body>
+</html>

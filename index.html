@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Pizza Order</title>
+  <link rel="stylesheet" href="/static/style.css">
+</head>
+<body>
+  <div class="container">
+    <h1>🍕 Order Your Pizza</h1>
+    <form action="/order" method="POST">
+      <input type="text" name="name" placeholder="Your Name" required>
+      
+      <select name="pizza" required>
+        <option value="Margherita">Margherita</option>
+        <option value="Pepperoni">Pepperoni</option>
+        <option value="Veggie">Veggie</option>
+      </select>
+      
+      <select name="size" required>
+        <option value="Small">Small</option>
+        <option value="Medium">Medium</option>
+        <option value="Large">Large</option>
+      </select>
+      
+      <input type="number" name="quantity" min="1" value="1">
+      <button type="submit">Place Order</button>
+    </form>
+  </div>
+  <script src="/static/script.js"></script>
+</body>
+</html>

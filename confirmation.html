@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Order Confirmation</title>
+  <link rel="stylesheet" href="/static/style.css">
+</head>
+<body>
+  <div class="container">
+    <div class="confirmation-box">
+      <h1>✅ Order Confirmed!</h1>
+      
+      <div class="order-summary">
+        <p><strong>Order ID:</strong> <span class="order-id">{{ order_id }}</span></p>
+        <p><strong>Customer:</strong> {{ name }}</p>
+        <p><strong>Pizza:</strong> {{ quantity }}x {{ size }} {{ pizza }}</p>
+        <p><strong>Status:</strong> <span class="status-badge">Preparing</span></p>
+      </div>
+
+      <div class="button-group">
+        <a href="/tracking/{{ order_id }}" class="btn btn-primary">📍 Track Order</a>
+        <a href="/payment/{{ order_id }}" class="btn btn-info">💳 Payment Options</a>
+        <a href="/delivery/{{ order_id }}" class="btn btn-success">🚗 Delivery Info</a>
+      </div>
+
+      <p class="info-text">Your order will be ready in approximately 30-45 minutes!</p>
+    </div>
+  </div>
+  <script src="/static/script.js"></script>
+</body>
+</html>
